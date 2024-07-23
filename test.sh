@@ -15,6 +15,10 @@ echo "Installation completed."
 
 echo "Creating a Hardhat project..."
 npx hardhat
+
+rm -f contracts/Lock.sol
+echo "Lock.sol removed."
+
 echo "Hardhat project created."
 
 echo "Installing Hardhat toolbox..."
@@ -22,8 +26,8 @@ npm install --save-dev @nomicfoundation/hardhat-toolbox
 echo "Hardhat toolbox installed."
 
 echo "Creating .env file..."
-read -p "Enter your private key: " PRIVATE_KEY
-echo "PRIVATE_KEY=0xee686eacfdbc9ce5770a38627b1ddbbade8300c6449dcec5ac16971d216b675a" > .env
+read -p "0xee686eacfdbc9ce5770a38627b1ddbbade8300c6449dcec5ac16971d216b675a" PRIVATE_KEY
+echo "PRIVATE_KEY=$PRIVATE_KEY" > .env
 echo ".env file created."
 
 echo "Configuring Hardhat..."
